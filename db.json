@@ -1,9 +1,26 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "eid": 44,
+      "name": "vumisa",
+      "mobile": 84,
+      "email": "vcemm24@gmail.com",
+      "address": "nsele n4",
+      "salary": 8000,
+      "gender": "male",
+      "position": "angulardev",
+      "id": 1
+    },
+    {
+      "eid": 45,
+      "name": "meso",
+      "mobile": 85,
+      "email": "test2@test2.com",
+      "address": "kinkole",
+      "salary": 5000,
+      "gender": "male",
+      "position": "vuedev",
+      "id": 2
     }
   ],
   "comments": [

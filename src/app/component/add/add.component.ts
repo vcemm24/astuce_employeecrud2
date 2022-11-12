@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MyserviceService } from 'src/app/service/myservice.service';
+import { employee } from '../view/employeemodel';
+
 interface gender{
   value:string;
   viewvalue:string;
@@ -25,9 +29,21 @@ userposition:position[]=[
   {value:'laraveldev',viewvalue:'Laravel Developer'},
 
 ]
-  constructor() { }
+public empy:employee={} as employee;
+  constructor(private employeeservice:MyserviceService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+  add(){
+    this.employeeservice.createuser(this.empy).subscribe((data:employee)=>{
+      alert("data added successfuly!")
+      this.router.navigate(['/view'])
+    },
+      err=>{
+        alert("something went wrong")
+        this.router.navigate(['/'])
+      }
+    )
   }
 
 }

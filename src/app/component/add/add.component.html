@@ -6,19 +6,19 @@
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe id</mat-label>
-                    <input matInput type="number" placeholder="Enter your id">
+                    <input matInput  [(ngModel)]="empy.eid" name="eid" type="number" placeholder="Enter your id">
                 </mat-form-field>
             </div>
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe name</mat-label>
-                    <input matInput type="name" placeholder="Enter your name">
+                    <input matInput [(ngModel)]="empy.name" name="name" type="name" placeholder="Enter your name">
                 </mat-form-field>
             </div>
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe phone</mat-label>
-                    <input matInput type="number" placeholder="Enter your phone">
+                    <input matInput [(ngModel)]="empy.mobile" name="mobile" type="number" placeholder="Enter your phone">
                 </mat-form-field>
             </div>
         </div>
@@ -26,19 +26,19 @@
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe email</mat-label>
-                    <input matInput type="email" placeholder="Enter your email">
+                    <input matInput  [(ngModel)]="empy.email" name="email" type="email" placeholder="Enter your email">
                 </mat-form-field>
             </div>
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe address</mat-label>
-                    <input matInput type="name" placeholder="Enter your address">
+                    <input matInput [(ngModel)]="empy.address" name="address" type="name" placeholder="Enter your address">
                 </mat-form-field>
             </div>
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" class="example-full-width" appearance="outline">
                     <mat-label>Employe salary</mat-label>
-                    <input matInput type="number" placeholder="Enter your salary">
+                    <input matInput  [(ngModel)]="empy.salary" name="salary" type="number" placeholder="Enter your salary">
                 </mat-form-field>
             </div>
         </div>
@@ -47,7 +47,7 @@
 
                 <mat-form-field [style.width.px]="375" appearance="outline">
                     <mat-label>Gender</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="empy.gender" name="gender" >
                         <mat-option *ngFor="let gender of usergender" [value]="gender.value">
                             {{gender.viewvalue}}
                         </mat-option>
@@ -57,7 +57,7 @@
             <div class="col-4">
                 <mat-form-field [style.width.px]="375" appearance="outline">
                     <mat-label>Position</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="empy.position" name="position">
                         <mat-option *ngFor="let position of userposition" [value]="position.value">
                             {{position.viewvalue}}
                         </mat-option>
@@ -67,7 +67,7 @@
         </div>
     </form>
     <div style="text-align: center;" >
-        <button type="button" class="margin-left btn btn-primary">ADD</button>
+        <button  (click)="add()" type="button" class="margin-left btn btn-primary">ADD</button>
         <button type="button"  [routerLink]=" ['/view'] " class="margin-left btn btn-danger">VIEW</button>
     </div>
 </div>
